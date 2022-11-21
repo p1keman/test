@@ -1,5 +1,5 @@
 apiVersion: abc/1
-kind:Template
+kind: Template
 metadata:
   name: template-name
   title: template-title
